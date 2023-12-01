@@ -16,7 +16,9 @@ export default function RootLayout({
   children,
 }: RootLayoutProps): React.ReactNode {
   return (
-    <html suppressHydrationWarning={true}>
+    <html
+      suppressHydrationWarning={true}
+    >
       <head />
       <body suppressHydrationWarning={true} className={nunito.className}>
         {children}
