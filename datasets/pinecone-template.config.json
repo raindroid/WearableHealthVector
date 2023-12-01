@@ -1,0 +1,4 @@
+{
+    "PINECONE_API_KEY": "xxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "PINECONE_ENVIRONMENT": "us-east4-gcp"
+}

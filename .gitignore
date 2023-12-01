@@ -1,5 +1,9 @@
 # key file and local configs
 secret.json
+pinecone.config.json
+
+# dataset file
+datasets/data/*
 
 # Logs
 logs

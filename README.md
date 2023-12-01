@@ -45,7 +45,6 @@ The MIT-BIH Arrhythmia Dataset preprocessed and segmented, with each segment cor
 
 - [Our notebook](./datasets/MIT-BIH.ipynb)
 - Data Source: [Kaggle Dataset](https://www.kaggle.com/datasets/shayanfazeli/heartbeat/data)
-- Download Link: [Download](https://www.kaggle.com/datasets/shayanfazeli/heartbeat/download?datasetVersionNumber=1)
 - Data Format: [Describe the format, e.g., CSV files containing ECG readings]
 
 ## Features
