@@ -59,6 +59,7 @@ export default function TasksLayout({
           width: "100%",
           p: 3,
           flexDirection: "row",
+          background: "#e2e2e2",
         }}
       >
         {/* <Sidenav
@@ -72,9 +73,11 @@ export default function TasksLayout({
           persistDrawer={!lgOrLessScreen}
           fontClass={nunito.className}
         /> */}
+        
         <GenBox
           sx={{
             display: "flex",
+            background: "#e2e2e2",
             flexDirection: "column",
             position: "absolute",
             width: {
