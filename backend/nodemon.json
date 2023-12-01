@@ -1,0 +1,8 @@
+{
+    "ignore": [
+        "results",
+        "scripts",
+        "uploads",
+        "tests"
+    ]
+}
