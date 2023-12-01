@@ -11,24 +11,28 @@ type LinePlotProps = {
 
 const LinePlot: React.FC<LinePlotProps> = ({ data, height, strokeWidth, strokeColor }) => {
   const d3Container = useRef(null);
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [width, setWidth] = useState(800);
 
   useEffect(() => {
+    if (ref && ref.current) {
     // when the component gets mounted
-    setWidth(ref.current?.offsetWidth);
+      setWidth(ref?.current?.offsetWidth);
+    }
     // setHeight(ref.current?.offsetHeight);
     // to handle page resize
     const getwidth = () => {
-      setWidth(ref.current?.offsetWidth);
+      if (ref && ref.current) {
+      setWidth(ref?.current?.offsetWidth);
       //   setHeight(ref.current?.offsetHeight);
       console.log("width: " + ref.current?.offsetWidth);
       //   console.log("height: " + ref.current?.offsetHeight);
+      }
     };
     window.addEventListener("resize", getwidth);
     // remove the event listener before the component gets unmounted
     return () => window.removeEventListener("resize", getwidth);
-  }, []);
+  }, [ref, ref.current]);
 
   useEffect(() => {
     if (data && d3Container.current) {
@@ -53,7 +57,9 @@ const LinePlot: React.FC<LinePlotProps> = ({ data, height, strokeWidth, strokeCo
 
       const y = d3
         .scaleLinear()
-        .domain([d3.min(data), d3.max(data)])
+        .domain([d3.min(data) ?? 0, // If d3.min(data) is undefined, use 0
+          d3.max(data) ?? 1  // If d3.max(data) is undefined, use 1
+        ])
         .range([drawingHeight, 0]);
 
       // Axes

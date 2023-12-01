@@ -47,12 +47,12 @@ app.post("/upload", upload.single("file"), (req, res) => {
     return res.status(400).send("No file uploaded.");
   }
 
-  const filePath = req.file.path;
+  const filePath = req.file.path.replace(/^'|'$/g, "");
   console.log(`File uploaded at ${filePath}`);
 
   // Execute your Python script here
   exec(
-    `python scripts/test.py ${filePath}`,
+    `python3 scripts/test.py ${filePath}`,
     { maxBuffer: bufferSize },
     (error, stdout, stderr) => {
       if (error) {
