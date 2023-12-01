@@ -72,15 +72,13 @@ export default function Home() {
     setError(null);
 
     try {
-      const response = await axios.post(
-        "http://localhost:3011/upload",
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const uploadUrl = process.env.NEXT_PUBLIC_UPLOAD_URL?.toString() || "";
+      console.log(`Uploading to ${uploadUrl}`)
+      const response = await axios.post(uploadUrl, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       console.log(response);
       const data = response.data;
       if (data.status !== "success") {
