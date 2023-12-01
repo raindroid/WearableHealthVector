@@ -4,8 +4,8 @@ import { ReactNode } from "react";
 const nunito = Nunito({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Text2SQL by GenAI",
-  description: "Generated SQL with native language",
+  title: "Wearable Health Monitoring System",
+  description: "Wearable Health Monitoring System by Vector Database",
 };
 
 interface RootLayoutProps {
