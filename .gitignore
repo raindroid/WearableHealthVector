@@ -4,6 +4,7 @@ pinecone.config.json
 
 # dataset file
 datasets/data/*
+dataset/*.json
 
 # Logs
 logs
