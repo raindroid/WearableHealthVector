@@ -1,41 +1,71 @@
-# COS597A Project: Wearable Device Health Monitoring Using Vector Search
+# COS597A Project: Wearable Health Condition Detection with Vector Database
 
 ## Project Overview
 
-[Provide a brief description of your project, its goals, and the problem it aims to solve. Mention the use of vector search in the context of health monitoring with wearable devices.]
+The project's objective is to investigate the feasibility of employing a Vector Database for health surveillance. We have conducted thorough testing across various datasets and developed a health condition monitoring system anchored by the Vector Database. Utilizing Pinecone for our database needs, we have also created a web application capable of analyzing and diagnosing ECG data derived from the Apple Watch, showcasing the potential for advanced health monitoring solutions.
 
 ## Table of Contents
 
-- [COS597A Project: Wearable Device Health Monitoring Using Vector Search](#cos597a-project-wearable-device-health-monitoring-using-vector-search)
+- [COS597A Project: Wearable Health Condition Detection with Vector Database](#cos597a-project-wearable-health-condition-detection-with-vector-database)
   - [Project Overview](#project-overview)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
   - [Datasets](#datasets)
     - [MIT-BIH](#mit-bih)
-  - [Features](#features)
-  - [Contributing](#contributing)
-  - [License](#license)
   - [Contact](#contact)
-  - [Acknowledgments](#acknowledgments)
 
 ## Installation
 
-[Instructions on how to install and set up your project. Include steps for installing any required software or libraries.]
+The project contains two components, 1. ECG dataset testing and 2. Health monitoring web applications
+
+1. ECG dataset requires the following dependencies: `python` with `jupyter` notebook
 
 ```bash
-# Example installation steps
-pip install required_package
+pip install -r requirements.txt
 ```
+
+- Setup api key for Pinecone by creating `datasets/pinecone.config.json` file
+
+  ```json
+  {
+    "PINECONE_API_KEY": "xxxxxxxxxx",
+    "PINECONE_ENVIRONMENT": "us-east4-gcp"
+  }
+  ```
+
+1. Health monitoring web application: also requires `nodejs` for website
+
+```bash
+(cd backend && yarn install)
+(cd wearable-health-vector-app && yarn install)
+```
+
+- Create `wearable-health-vector-app/.env.local` to connect frontend to the backend api
+
+  ```log
+  ### Backend location
+  NEXT_PUBLIC_UPLOAD_URL=http://localhost:3011/upload
+  ```
 
 ## Usage
 
-[Provide instructions on how to use the project after installation. Include examples of commands or scripts to run.]
+1. Check notebooks in datasets for detail
 
-```python
-# Example usage
-python monitor_health.py --input data/sample_ecg.csv
-```
+2. Start backend
+
+   ```bash
+   cd backend
+   mkdir -p uploads results
+   nodemon app.js
+   ```
+
+3. Start frontend
+
+    ```bash
+    cd wearable-health-vector-app
+    npm run dev
+    ```
 
 ## Datasets
 
@@ -47,39 +77,14 @@ The MIT-BIH Arrhythmia Dataset preprocessed and segmented, with each segment cor
 - Data Source: [Kaggle Dataset](https://www.kaggle.com/datasets/shayanfazeli/heartbeat/data)
 - Data Format: [Describe the format, e.g., CSV files containing ECG readings]
 
-## Features
+r## Features
 
 [List the key features of your project. For example, real-time monitoring, alert system, pattern recognition, etc.]
 
 - Feature 1: [Description]
 - Feature 2: [Description]
 
-## Contributing
-
-[Instructions for how others can contribute to the project. Include any guidelines for contributing.]
-
-To contribute to this project, please:
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a pull request
-
-## License
-
-[Include information about the project's license. Provide a link to the license file if available.]
-
-Distributed under the [License Name] License. See `LICENSE` for more information.
-
 ## Contact
 
 Malinda Huang: linhui.huang@princeton.edu
 Yucan Wu: yucan.wu@princeton.edu
-
-## Acknowledgments
-
-[Include any acknowledgments, credits, or resources you used in the project. This could be tools, libraries, datasets, etc.]
-
-- [Name or Description of Resource]
-- [Name or Description of Resource]
