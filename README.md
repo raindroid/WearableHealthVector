@@ -91,7 +91,7 @@ The PTB Diagnostic ECG Database preprocessed and segmented, with each segment co
 
 AF Classification from a Short Single Lead ECG Recording
 
-- [Our notebook](./datasets/af_challenge2017.ipynb)
+- [Our notebook](./datasets/af-challenge2017.ipynb)
 - Data Source: [PhysioNet](https://physionet.org/content/challenge-2017/1.0.0/)
 - Classes: {"Normal": 0, "AF": 1, "Other rhythm": 2, "Noisy": 3}
 
