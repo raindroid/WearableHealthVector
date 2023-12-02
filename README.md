@@ -13,6 +13,8 @@ The project's objective is to investigate the feasibility of employing a Vector 
   - [Usage](#usage)
   - [Datasets](#datasets)
     - [MIT-BIH](#mit-bih)
+    - [PTB](#ptb)
+    - [The PhysioNet/Computing in Cardiology Challenge 2017](#the-physionetcomputing-in-cardiology-challenge-2017)
   - [Contact](#contact)
 
 ## Installation
@@ -75,16 +77,25 @@ The MIT-BIH Arrhythmia Dataset preprocessed and segmented, with each segment cor
 
 - [Our notebook](./datasets/MIT-BIH.ipynb)
 - Data Source: [Kaggle Dataset](https://www.kaggle.com/datasets/shayanfazeli/heartbeat/data)
-- Data Format: [Describe the format, e.g., CSV files containing ECG readings]
+- Classes: {"N": 0, "S": 1, "V": 2, "F": 3, "Q": 4}
 
-r## Features
+### PTB
 
-[List the key features of your project. For example, real-time monitoring, alert system, pattern recognition, etc.]
+The PTB Diagnostic ECG Database preprocessed and segmented, with each segment corresponding to a heartbeat
 
-- Feature 1: [Description]
-- Feature 2: [Description]
+- [Our notebook](./datasets/PTB.ipynb)
+- Data Source: [Kaggle Dataset](https://www.kaggle.com/datasets/shayanfazeli/heartbeat/data)
+- Number of Categories: 2
+
+### The PhysioNet/Computing in Cardiology Challenge 2017
+
+AF Classification from a Short Single Lead ECG Recording
+
+- [Our notebook](./datasets/af_challenge2017.ipynb)
+- Data Source: [PhysioNet](https://physionet.org/content/challenge-2017/1.0.0/)
+- Classes: {"Normal": 0, "AF": 1, "Other rhythm": 2, "Noisy": 3}
 
 ## Contact
 
-Malinda Huang: linhui.huang@princeton.edu
-Yucan Wu: yucan.wu@princeton.edu
+Malinda Huang: <linhui.huang@princeton.edu>
+Yucan Wu: <yucan.wu@princeton.edu>
