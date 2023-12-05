@@ -114,6 +114,7 @@ export default function Home() {
           }}
         >
           <UploadButton
+            disabled
             variant="contained"
             component="label"
             sx={{
