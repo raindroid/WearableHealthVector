@@ -6,7 +6,7 @@ The project's objective is to investigate the feasibility of employing a Vector 
 
 ### Presentation
 
-- Slides: [link](./COS597A Project Final.pdf)
+- Slides: [link](./COS597A_Project_Final.pdf)
 - Video Demo Link: [Google Drive](https://drive.google.com/file/d/1_WHb4aabwujUbzh40ARQyKZ5RU7dtKKe/view?usp=drive_link)
 
 ## Table of Contents
