@@ -102,5 +102,5 @@ AF Classification from a Short Single Lead ECG Recording
 
 ## Contact
 
-Malinda Huang: <linhui.huang@princeton.edu>
+Malinda Huang: <linhui.huang@princeton.edu>  
 Yucan Wu: <yucan.wu@princeton.edu>
