@@ -4,6 +4,11 @@
 
 The project's objective is to investigate the feasibility of employing a Vector Database for health surveillance. We have conducted thorough testing across various datasets and developed a health condition monitoring system anchored by the Vector Database. Utilizing Pinecone for our database needs, we have also created a web application capable of analyzing and diagnosing ECG data derived from the Apple Watch, showcasing the potential for advanced health monitoring solutions.
 
+### Presentation
+
+- Slides: [link](./COS597A Project Final.pdf)
+- Video Demo Link: [Google Drive](https://drive.google.com/file/d/1_WHb4aabwujUbzh40ARQyKZ5RU7dtKKe/view?usp=drive_link)
+
 ## Table of Contents
 
 - [COS597A Project: Wearable Health Condition Detection with Vector Database](#cos597a-project-wearable-health-condition-detection-with-vector-database)
