@@ -1,9 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import styles from "../page.module.css";
-import TopBar from "../TopBar/TopBar";
-import { GenBox, GenButton } from "../components";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
 import {
   Button,
@@ -13,15 +9,15 @@ import {
   Typography,
   styled,
 } from "@mui/material";
-import { Nova_Square, Saira } from "next/font/google";
-import { ChangeEvent, ChangeEventHandler, useEffect, useState } from "react";
 import axios from "axios";
+import { Nova_Square, Saira } from "next/font/google";
 import { useSearchParams } from "next/navigation";
+import { ChangeEvent, useState } from "react";
+import { GenBox } from "../components";
 
 const noveSquare = Nova_Square({ subsets: ["latin"], weight: "400" });
 const saira = Saira({ subsets: ["latin"], weight: "900" });
 
-import sampleData from "./sample.json";
 import ResultsComponent from "./results";
 
 const UploadButton = styled(Button)<ButtonProps>({
@@ -54,13 +50,6 @@ export default function Home() {
   const [result, setResult] = useState<null | string | any>(null);
   const [error, setError] = useState<null | string>(null);
 
-  const demo = searchParams.get("demo");
-  useEffect(() => {
-    if (demo === "true") {
-      setResult(sampleData);
-    }
-  }, [demo]);
-
   const handleUpload = async (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (!file) return;
@@ -73,7 +62,7 @@ export default function Home() {
 
     try {
       const uploadUrl = process.env.NEXT_PUBLIC_UPLOAD_URL?.toString() || "";
-      console.log(`Uploading to ${uploadUrl}`)
+      console.log(`Uploading to ${uploadUrl}`);
       const response = await axios.post(uploadUrl, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
@@ -150,6 +139,20 @@ export default function Home() {
             top: 0,
           }}
         >
+          <Typography
+            variant="subtitle2"
+            sx={{
+              textAlign: "start",
+              marginBottom: "1rem",
+            }}
+          >
+            We use ECG data collected from Apple Watch
+            <br />
+            1. In Apple Health on your iPhone, click profile icon <br/>
+            2. Scroll down to the end <br />
+            3. Click <strong>Export All Health Data</strong> button <br/>
+            4. Save the{" "}<strong>export.zip</strong>, and upload it here
+          </Typography>
           <UploadButton
             variant="contained"
             component="label"
